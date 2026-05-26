@@ -1,6 +1,13 @@
 ---
 name: research-implement
 description: "[Read when prompt contains /research-implement]"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Glob
+  - Grep
 metadata:
   {
     "openclaw":

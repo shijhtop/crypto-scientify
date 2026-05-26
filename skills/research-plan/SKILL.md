@@ -1,6 +1,11 @@
 ---
 name: research-plan
 description: "[Read when prompt contains /research-plan]"
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
 metadata:
   {
     "openclaw":

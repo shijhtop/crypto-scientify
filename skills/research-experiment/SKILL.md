@@ -1,6 +1,13 @@
 ---
 name: research-experiment
 description: "[Read when prompt contains /research-experiment]"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Glob
+  - Grep
 metadata:
   {
     "openclaw":

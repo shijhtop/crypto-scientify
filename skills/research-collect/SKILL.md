@@ -1,6 +1,15 @@
 ---
 name: research-collect
 description: "[Read when prompt contains /research-collect]"
+allowed-tools:
+  - Read
+  - Write
+  - Bash
+  - Glob
+  - Grep
+  - mcp__csf__arxiv_search
+  - mcp__csf__openalex_search
+  - mcp__csf__eprint_search
 metadata:
   {
     "openclaw":

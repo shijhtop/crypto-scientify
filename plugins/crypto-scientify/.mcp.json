@@ -1,0 +1,11 @@
+{
+  "_comment": "MCP server for crypto-scientify Codex plugin. Exposes arxiv_search, openalex_search, eprint_search. No build required — pure JS.",
+  "mcp_servers": {
+    "csf": {
+      "command": "node",
+      "args": [
+        "../../mcp-server/index.mjs"
+      ]
+    }
+  }
+}

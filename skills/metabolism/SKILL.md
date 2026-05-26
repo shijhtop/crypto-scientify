@@ -1,6 +1,15 @@
 ---
 name: metabolism
 description: "Knowledge metabolism: Day 0 init (discuss + baseline survey) or daily cycle (incremental search + update knowledge + generate hypotheses). Triggered by bootstrap and daily cron."
+allowed-tools:
+  - Read
+  - Write
+  - Bash
+  - Glob
+  - Grep
+  - mcp__csf__arxiv_search
+  - mcp__csf__openalex_search
+  - mcp__csf__eprint_search
 ---
 
 # Knowledge Metabolism

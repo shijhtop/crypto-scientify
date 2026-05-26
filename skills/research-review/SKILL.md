@@ -1,6 +1,13 @@
 ---
 name: research-review
 description: "[Read when prompt contains /research-review]"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Glob
+  - Grep
 metadata:
   {
     "openclaw":

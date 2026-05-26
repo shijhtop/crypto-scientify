@@ -1,6 +1,11 @@
 ---
 name: research-survey
 description: "[Read when prompt contains /research-survey]"
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
 metadata:
   {
     "openclaw":

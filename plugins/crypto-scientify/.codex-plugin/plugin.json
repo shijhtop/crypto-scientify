@@ -1,0 +1,24 @@
+{
+  "name": "crypto-scientify",
+  "version": "1.0.0",
+  "description": "Continuous AI research workflow with IACR ePrint support. Best suited for cryptography, PQC, provable security, cryptanalysis, and side-channel research.",
+  "author": {
+    "name": "crypto-scientify"
+  },
+  "license": "MIT",
+  "keywords": ["research", "cryptography", "pqc", "arxiv", "eprint", "literature-review"],
+  "skills": "../../skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Crypto-Scientify",
+    "shortDescription": "Continuous knowledge metabolism for cryptography research with IACR ePrint search.",
+    "longDescription": "Crypto-Scientify extends Scientify with IACR ePrint search, a crypto-specific adversary review skill (attack vectors for applied/theory/cryptanalysis/SCA modes), and a 40-term pre-audited crypto glossary. Supports metabolism (daily incremental cycles), idea generation, literature collection, implementation, and paper writing.",
+    "developerName": "crypto-scientify",
+    "category": "Research",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Run MCP tools"
+    ]
+  }
+}

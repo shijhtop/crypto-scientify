@@ -1,6 +1,12 @@
 ---
 name: write-paper
 description: "Use this when the user wants a systems paper, experiment paper, technical report, or extended abstract drafted from existing Scientify artifacts. Builds a claim-bounded paper draft from experiment outputs, figures, and supporting notes."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
 metadata:
   {
     "openclaw":

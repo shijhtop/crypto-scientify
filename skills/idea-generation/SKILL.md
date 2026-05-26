@@ -1,6 +1,14 @@
 ---
 name: idea-generation
 description: "Use this when the user wants research ideas, innovation points, or to find research gaps (找研究方向, 生成创新点). Generates 5 ideas from collected papers, identifies gaps, proposes novel methods with citations. Requires papers in workspace."
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
+  - mcp__csf__arxiv_search
+  - mcp__csf__openalex_search
+  - mcp__csf__eprint_search
 metadata:
   {
     "openclaw":

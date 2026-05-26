@@ -1,6 +1,11 @@
 ---
 name: crypto-adversary
 description: "[Read when prompt contains /crypto-adversary]"
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
 metadata:
   {
     "openclaw":
