@@ -93,6 +93,14 @@ function parseAtomXml(xml) {
   return papers;
 }
 
+const FETCH_TIMEOUT_MS = 20_000;
+
+function fetchWithTimeout(url) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+  return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(timer));
+}
+
 async function arxivSearch(args) {
   const query = (args.query ?? "").trim();
   if (!query) throw new Error("query required");
@@ -107,7 +115,7 @@ async function arxivSearch(args) {
     search_query: searchQuery, start: "0",
     max_results: String(maxResults), sortBy, sortOrder: "descending",
   });
-  const res = await fetch(`https://export.arxiv.org/api/query?${params}`);
+  const res = await fetchWithTimeout(`https://export.arxiv.org/api/query?${params}`);
   if (!res.ok) throw new Error(`arXiv API returned ${res.status}`);
   const papers = parseAtomXml(await res.text());
   return {
@@ -146,7 +154,7 @@ async function openalexSearch(args) {
     sort: sortMap[args.sort ?? "relevance_score"] ?? "relevance_score:desc",
   });
   if (args.filter) params.set("filter", args.filter);
-  const res = await fetch(`https://api.openalex.org/works?${params}`);
+  const res = await fetchWithTimeout(`https://api.openalex.org/works?${params}`);
   if (res.status === 429) throw new Error("OpenAlex rate limit exceeded");
   if (!res.ok) throw new Error(`OpenAlex API returned ${res.status}`);
   const data = await res.json();
@@ -207,7 +215,7 @@ async function eprintSearch(args) {
   const maxResults = Math.min(Math.max(1, args.max_results ?? 10), 50);
   const params = new URLSearchParams({ q: query });
   if (args.date_from) params.set("submittedafter", args.date_from);
-  const res = await fetch(`https://eprint.iacr.org/search?${params}`);
+  const res = await fetchWithTimeout(`https://eprint.iacr.org/search?${params}`);
   if (!res.ok) throw new Error(`IACR ePrint returned ${res.status}`);
   const papers = parseEprintHtml(await res.text()).slice(0, maxResults);
   return {
