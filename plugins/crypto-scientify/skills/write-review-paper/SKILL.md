@@ -8,6 +8,11 @@ metadata:
         "emoji": "📝",
       },
   }
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
 ---
 
 # Literature Review Writing

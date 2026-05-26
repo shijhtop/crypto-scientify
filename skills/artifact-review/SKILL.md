@@ -8,6 +8,11 @@ metadata:
         "emoji": "🧾",
       },
   }
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
 ---
 
 # Artifact Review

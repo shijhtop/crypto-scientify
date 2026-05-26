@@ -1,6 +1,12 @@
 ---
 name: paper-download
 description: "Download academic papers: arXiv source/PDF by ID, DOI papers via Unpaywall open access. Supports batch download."
+allowed-tools:
+  - Read
+  - Write
+  - Bash
+  - Glob
+  - Grep
 ---
 
 # Paper Download

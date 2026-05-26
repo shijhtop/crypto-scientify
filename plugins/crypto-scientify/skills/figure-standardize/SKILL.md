@@ -8,6 +8,13 @@ metadata:
         "emoji": "📊",
       },
   }
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Glob
+  - Grep
 ---
 
 # Figure Standardization

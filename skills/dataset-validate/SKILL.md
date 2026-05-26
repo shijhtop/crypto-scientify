@@ -9,6 +9,12 @@ metadata:
         "requires": { "bins": ["python3", "uv"] },
       },
   }
+allowed-tools:
+  - Read
+  - Write
+  - Bash
+  - Glob
+  - Grep
 ---
 
 # Dataset Validate

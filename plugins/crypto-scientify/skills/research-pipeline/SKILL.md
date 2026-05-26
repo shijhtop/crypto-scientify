@@ -9,6 +9,13 @@ metadata:
         "requires": { "bins": ["git", "python3", "uv"] },
       },
   }
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Glob
+  - Grep
 ---
 
 # Research Pipeline (Orchestrator)
