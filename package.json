@@ -8,6 +8,8 @@
   "files": [
     "dist",
     "skills",
+    "mcp-server",
+    ".claude-plugin",
     "openclaw.plugin.json"
   ],
   "keywords": [

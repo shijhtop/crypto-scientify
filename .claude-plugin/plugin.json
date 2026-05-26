@@ -1,0 +1,97 @@
+{
+  "name": "crypto-scientify",
+  "description": "Continuous AI research workflow with IACR ePrint support. Best suited for cryptography, PQC, provable security, cryptanalysis, and ML-assisted crypto. Also usable for general CS research.",
+  "version": "1.0.0",
+  "author": { "name": "crypto-scientify" },
+  "license": "MIT",
+  "keywords": ["research", "cryptography", "pqc", "arxiv", "eprint", "literature-review"],
+  "skills": [
+    "./skills/research-collect",
+    "./skills/research-survey",
+    "./skills/research-plan",
+    "./skills/research-implement",
+    "./skills/research-review",
+    "./skills/research-experiment",
+    "./skills/idea-generation",
+    "./skills/write-paper",
+    "./skills/metabolism",
+    "./skills/crypto-adversary"
+  ],
+  "mcpServers": {
+    "csf": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/index.mjs"]
+    }
+  },
+  "commands": {
+    "collect": {
+      "source": "./skills/research-collect/SKILL.md",
+      "description": "Collect literature: arXiv + OpenAlex + IACR ePrint (crypto).",
+      "argumentHint": "[topic or extra keywords]",
+      "allowedTools": [
+        "Read", "Write", "Glob", "Grep", "Bash",
+        "mcp__csf__arxiv_search",
+        "mcp__csf__openalex_search",
+        "mcp__csf__eprint_search"
+      ]
+    },
+    "survey": {
+      "source": "./skills/research-survey/SKILL.md",
+      "description": "Survey and synthesise collected literature.",
+      "argumentHint": "[optional focus]",
+      "allowedTools": ["Read", "Write", "Glob", "Grep"]
+    },
+    "plan": {
+      "source": "./skills/research-plan/SKILL.md",
+      "description": "Plan the research: identify gaps, pick a direction, define experiments.",
+      "argumentHint": "[optional focus]",
+      "allowedTools": ["Read", "Write", "Glob", "Grep"]
+    },
+    "implement": {
+      "source": "./skills/research-implement/SKILL.md",
+      "description": "Implement: code, proof sketch, or algorithm.",
+      "argumentHint": "[optional scope]",
+      "allowedTools": ["Read", "Write", "Edit", "Bash", "Glob", "Grep"]
+    },
+    "experiment": {
+      "source": "./skills/research-experiment/SKILL.md",
+      "description": "Run experiments and record results.",
+      "argumentHint": "[optional experiment scope]",
+      "allowedTools": ["Read", "Write", "Edit", "Bash", "Glob", "Grep"]
+    },
+    "write": {
+      "source": "./skills/write-paper/SKILL.md",
+      "description": "Write the research paper.",
+      "argumentHint": "[optional focus]",
+      "allowedTools": ["Read", "Write", "Edit", "Glob", "Grep"]
+    },
+    "idea": {
+      "source": "./skills/idea-generation/SKILL.md",
+      "description": "Generate research hypotheses from accumulated literature.",
+      "argumentHint": "[optional direction]",
+      "allowedTools": [
+        "Read", "Write", "Glob", "Grep",
+        "mcp__csf__arxiv_search",
+        "mcp__csf__openalex_search",
+        "mcp__csf__eprint_search"
+      ]
+    },
+    "adversary": {
+      "source": "./skills/crypto-adversary/SKILL.md",
+      "description": "Red-team pass for crypto research: attack vectors, proof gaps, SCA checks.",
+      "argumentHint": "",
+      "allowedTools": ["Read", "Write", "Glob", "Grep"]
+    },
+    "metabolism": {
+      "source": "./skills/metabolism/SKILL.md",
+      "description": "Run the continuous knowledge metabolism cycle (Day 0 init or daily increment).",
+      "argumentHint": "",
+      "allowedTools": [
+        "Read", "Write", "Bash", "Glob", "Grep",
+        "mcp__csf__arxiv_search",
+        "mcp__csf__openalex_search",
+        "mcp__csf__eprint_search"
+      ]
+    }
+  }
+}
